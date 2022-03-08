@@ -1,0 +1,98 @@
+version: "2.0"
+
+stories:
+
+
+- story: payslip
+  steps:
+  - intent: greet
+  - action: hr_form
+  - active_loop: hr_form
+  - slot_was_set:
+    - requested_slot: employe_id
+  - slot_was_set:
+    - employe_id: '56'
+  - slot_was_set:
+    - employe_id: '56'
+  - slot_was_set:
+    - requested_slot: employe_passcode
+  - slot_was_set:
+    - employe_id: '1456'
+  - slot_was_set:
+    - employe_passcode: '1456'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+
+  #- action: validate_hr_form
+  #- action: utter_welcome
+  #- action: utter_welcomes
+  #
+ # - intent: pay
+  
+  #- slot_was_set:
+
+  - slot_was_set:
+        - catolog: look at payslip
+          
+              
+     
+
+    
+  - action: utter_welcome  
+  #- action: action_catalog
+#new story:
+- story: readpolicies
+  steps:
+  - intent: greet
+  - action: hr_form
+  - active_loop: hr_form
+  - slot_was_set:
+    - requested_slot: employe_id
+  - slot_was_set:
+    - employe_id: '56'
+  - slot_was_set:
+    - employe_id: '56'
+  - slot_was_set:
+    - requested_slot: employe_passcode
+  - slot_was_set:
+    - employe_id: '1456'
+  - slot_was_set:
+    - employe_passcode: '1456'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+
+  #- action: validate_hr_form
+  #- action: utter_welcome
+ # - action: utter_welcomes
+  #- slot_was_set:
+    #- catolog: Read policies
+  - action: utter_welcome  
+- story: makerequest
+  steps:
+  - intent: greet
+  - action: hr_form
+  - active_loop: hr_form
+  - slot_was_set:
+    - requested_slot: employe_id
+  - slot_was_set:
+    - employe_id: '56'
+  - slot_was_set:
+    - employe_id: '56'
+  - slot_was_set:
+    - requested_slot: employe_passcode
+  - slot_was_set:
+    - employe_id: '1456'
+  - slot_was_set:
+    - employe_passcode: '1456'
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+
+  #- action: validate_hr_form
+  #- action: utter_welcome
+  #- action: utter_welcomes
+  #- slot_was_set:
+    #- catolog: Read policies
+  - action: utter_welcome  

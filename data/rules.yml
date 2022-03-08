@@ -1,0 +1,19 @@
+version: "2.0"
+
+rules:
+
+
+#- rule: Activate Pizza Form
+ # steps:
+ # - intent: greet
+ # - action: hr_form
+#  - active_loop: hr_form
+
+#- rule: Submit Pizza Form
+  #condition:
+  #- active_loop: hr_form
+  #steps:
+  #- action: hr_form
+  #- active_loop: null
+  #- slot_was_set:
+  #  - requested_slot: null
