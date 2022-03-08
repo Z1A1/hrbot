@@ -66,8 +66,8 @@ stories:
   #- action: validate_hr_form
   #- action: utter_welcome
  # - action: utter_welcomes
-  #- slot_was_set:
-    #- catolog: Read policies
+  - slot_was_set:
+    - catolog: Read policies
   - action: utter_welcome  
 - story: makerequest
   steps:
@@ -93,6 +93,6 @@ stories:
   #- action: validate_hr_form
   #- action: utter_welcome
   #- action: utter_welcomes
-  #- slot_was_set:
-    #- catolog: Read policies
+  - slot_was_set:
+    - catolog: Read policies
   - action: utter_welcome  
