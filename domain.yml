@@ -1,0 +1,121 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- numbers:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- month:
+    use_entities: true
+- policy:
+    use_entities: true
+entities:
+- employe_id
+- employe_passcode
+slots:
+  employe_id:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  employe_passcode:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  catolog:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  valider:
+    type: rasa.shared.core.slots.BooleanSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses:
+  utter_ask_employe_id:
+  - text: Please enter your Employee ID
+  utter_ask_catolog:
+  - text: Welcome to HR Portal. 😊 What would you like to do?👇
+  utter_payslip:
+  - text: |-
+      Got it. Here's your Payslip 👇
+      Earnings
+      Basic Pay: Rs. ABC
+      Variable Pay: Rs. ABC
+      Special Allowance: Rs. ABC
+      Travel Allowance: Rs. ABC
+      OverTime: Rs. ABC
+      Deducations
+      Providwnt Fund: Rs. ABC
+      E.S.I: Rs. ABC
+      Profession Tax: Rs. ABC
+
+
+      Net Salary: Rs. ABC        
+  utter_ask_employe_passcode:
+  - text: Great, please enter your 4 digit Passcode. 👇
+  utter_greet:
+  - text: Hey! How are you?
+  utter_welcome:
+  - condition:
+    - name: catolog
+      type: slot
+      value: look at payslip
+    text: Which month's Pay Slip would you like to see?
+  - condition:
+    - name: catolog
+      type: slot
+      value: read policies
+    text: Select the policy that you want to read about 👇
+  - condition:
+    - name: catolog
+      type: slot
+      value: make a request
+    text: Got that, please let me know the following details to serve you better 😊
+  utter_policies:
+  - buttons:
+    - title: Privacy Policy
+    - title: Termination
+    - title: Vacation
+    text: Select the policy that you want to read about 👇
+  utter_hr:
+  - buttons:
+    - title: Select the dates
+    text: Schedule a HR Discussion
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+actions: []
+forms:
+  hr_form:
+    required_slots:
+      catolog:
+      - type: from_text
+      employe_id:
+      - entity: employe_id
+        type: from_text
+      employe_passcode:
+      - entity: employe_passcode
+        type: from_text
+e2e_actions: []

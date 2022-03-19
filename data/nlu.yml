@@ -1,0 +1,33 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hi
+- intent: month
+  examples: |
+    - jan
+    - feburary
+    - march 
+- intent: policy
+  examples: |
+    - write policy
+    - Read policies
+    - take policies       
+- intent: numbers
+  examples: |
+    - [56](employe_id)
+    - [2345](employe_passcode)
+    - [789](employe_id)
+    - [1456](employe_passcode)
+    - [56](employe_id)
+    - [1456](employe_id)
+- intent: goodbye
+  examples: |
+    - bye
+- regex: employe_id
+  examples: |
+    - \d{0,12}
+- regex: employe_passcode
+  examples: |
+    - \d{0,4}
+   

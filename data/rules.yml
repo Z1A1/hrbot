@@ -1,0 +1,11 @@
+version: "2.0"
+
+rules:
+
+
+#- rule: Activate Pizza Form
+ # steps:
+ # - intent: greet
+ # - action: hr_form
+#  - active_loop: hr_form
+
